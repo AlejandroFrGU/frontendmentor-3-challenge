@@ -55,7 +55,7 @@ a{
 }
 .faq_img .faq_img-box{
     display: none;
-    animation: fade 1.2s ease-in-out;
+    animation: fade-box 1.2s ease-in-out;
 }
 .faq_img .faq_img-woman {
     position: absolute;
@@ -136,10 +136,13 @@ a{
     #faq{
         grid-template-columns: 1fr 1fr;
         max-width: 1000px;
+        width: 900px;
+        height: 600px;
         padding: 0;
     }
     .faq_img{
         grid-template-rows: 100%;
+        height: 600px;
         background: none;
     }
     .faq_img-parthidden{
@@ -156,7 +159,7 @@ a{
         position: absolute;
         top: initial;
         bottom: 10rem;
-        left: -5rem;
+        left: -5.5rem;
         z-index: 20;
         transition: transform 1s;
         /* box-shadow: 0px 4px 8px hsla(0, 0%, 0%, 0.318); */
@@ -174,7 +177,7 @@ a{
         left: -5rem;
     }
     .faq_img .faq_img-shadow{
-        width: 160%;
+        width: 150%;
         aspect-ratio: 1 / 1;
         position: absolute;
         bottom: -2rem;
@@ -203,6 +206,16 @@ a{
       opacity: 1;
       transform: translateY(0px);
     }
-  }
+}
+@keyframes fade-box {
+    from {
+      opacity: 0;
+      transform: translatex(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translatex(0px);
+    }
+}
   
 /* You got here? Congratulations have a 🦞 */
