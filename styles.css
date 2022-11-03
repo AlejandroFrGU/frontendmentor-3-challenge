@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+:root{
+    --text-color-pr-1: hsl(238, 29%, 16%);
+    --text-color-pr-2: hsl(14, 88%, 65%);
+    --bg-gradient-1: hsl(273, 75%, 66%);
+    --bg-gradient-2: hsl(240, 73%, 65%);
+    --text-color-nt-1:hsl(237, 12%, 33%);
+    --text-color-nt-2:hsl(240, 6%, 50%);
+    --divider-color-1:hsl(240, 5%, 91%);
+    --font-fam-1: 'Kumbh Sans', sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    font-size: 12px;
+    display: grid;
+    place-items:center;
+    min-height: 100vh;
+    background: linear-gradient(var(--bg-gradient-1),var(--bg-gradient-2));
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: var(--font-fam-1);
+}
+.sr-only{
+    position: absolute;
+    width: 0;
+    opacity: 0;
+    aspect-ratio: 1 /1;
+}
+a{
+    color: var(--text-color-pr-2);
+}
+#faq{
+    margin: 120px 1rem;
+    min-width: 200px;
+    max-width: 400px;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem 3rem;
+    display: grid;
+}
+.faq_img{
+    position: relative;
+    width: 100%;
+    min-height: 120px;
+    display: grid;
+    place-items: center;
+    
+}
+.faq_img .faq_img-box{
+    display: none;
+}
+.faq_img .faq_img-woman {
+    position: absolute;
+    max-width: 240px;
+    aspect-ratio: 1 / 1;
+    top: -120%;
+}
+
+.faq_title{
+    text-align: center;
+    font-weight: var(--font-weight-bold);
+    font-size: 2rem;
+    padding: 1rem;
+}
+.faq_content{
+    font-size: 1rem;
+}
+.faq_content-question{
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: 90% minmax(1rem,10%);
+    width: 100%;
+    text-align: left;
+    color: var(--text-color-nt-1);
+    font-size: 1rem;
+    background-color: whitesmoke;
+    border: none;
+    cursor: pointer;
+}
+.arrow-icon{
+    aspect-ratio: 1 / 1;
+    background-image: url(images/icon-arrow-down.svg); 
+    background-repeat: no-repeat;
+    background-position:right center;
+}
+.faq_content-question,
+.faq_content-response{
+    border-bottom: 1px solid var(--divider-color-1);
+    max-width: 250px;
+}
+.selected_question{
+    font-weight:var(--font-weight-bold);
+    border-bottom: 0px;
+}
+.faq_content-question:hover:not(.selected_question) p {
+    color: var(--text-color-pr-2);
+}
+.selected_question .arrow-icon{
+    transform: rotate(180deg);
+    background-position: left center;
+}
+.faq_content-response{
+    font-family: var(--font-fam-1);
+    color: var(--text-color-nt-2);
+    font-size: .9rem;
+    padding-bottom: 1rem;
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    z-index: -10;
+    position: absolute;
+}
+.show_response{
+    opacity: 1;
+    height: auto;
+    position: inherit;
+    z-index: 0;
+    padding-bottom: 1rem;
+}
+.faq_content-response:last-child{
+    border-bottom: 0px;
+}
+
+@media screen and (min-width:1440px) {
+    #faq{
+        grid-template-columns: 1fr 1fr;
+        max-width: 1000px;
+        padding: 0;
+    }
+    .faq_img{
+        grid-template-rows: 100%;
+        background: none;
+    }
+    .faq_img-parthidden{
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .faq_img .faq_img-box {
+        display: block;
+        width: 40%;
+        aspect-ratio: 1 / 1;
+        max-width: 90%;
+        position: absolute;
+        top: initial;
+        bottom: 10rem;
+        left: -5rem;
+        z-index: 20;
+    }
+    .faq_img .faq_img-woman{
+        aspect-ratio: 1.5 / 1;
+        max-width: 100%;
+        position: absolute;
+        top: initial;
+        bottom: 9rem;
+        z-index: 10;
+        left: -5rem;
+    }
+    .faq_img .faq_img-shadow{
+        width: 160%;
+        aspect-ratio: 1 / 1;
+        position: absolute;
+        bottom: -2rem;
+        left: -20rem;
+        z-index: 0;
+    }
+    .faq_content {
+        padding: 1rem 4rem 4rem 0;
+    }
+    .faq_content > .faq_title {
+        text-align: left;
+        padding-left: 0;
+    }
+    .faq_content > .faq_content-question,
+    .faq_content > .faq_content-response {
+        font-size: 1.2em;
+        max-width: 350px;
+    }
+}
+
+/* You got here? Congratulations have a 🦞 */
