@@ -52,16 +52,17 @@ a{
     min-height: 120px;
     display: grid;
     place-items: center;
-    
 }
 .faq_img .faq_img-box{
     display: none;
+    animation: fade 1.2s ease-in-out;
 }
 .faq_img .faq_img-woman {
     position: absolute;
     max-width: 240px;
     aspect-ratio: 1 / 1;
     top: -120%;
+    animation: fade .9s ease-in-out;
 }
 
 .faq_title{
@@ -72,6 +73,7 @@ a{
 }
 .faq_content{
     font-size: 1rem;
+    animation: fade .6s ease-in-out;
 }
 .faq_content-question{
     padding: 1rem 0;
@@ -119,6 +121,7 @@ a{
     position: absolute;
 }
 .show_response{
+    animation: fade .5s ease-in-out;
     opacity: 1;
     height: auto;
     position: inherit;
@@ -191,5 +194,15 @@ a{
         max-width: 350px;
     }
 }
-
+@keyframes fade {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  
 /* You got here? Congratulations have a 🦞 */
